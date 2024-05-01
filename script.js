@@ -356,9 +356,11 @@ console.table(countryCountsNew);
 
 // Comparison
 console.time("imperative-timer");
-
+const matchedMoviesTest = getMoviesByKeyword("Halloween", 1);
+console.table(matchedMoviesTest.splice(0, 5), ["title", "plot"]);
 console.timeEnd("imperative-timer");
 
 console.time("functional-timer");
-
+const matchedMoviesNewTest = getMoviesByKeywordNew(data)("Halloween")(1);
+console.table(matchedMoviesNewTest.splice(0, 5), ["title", "plot"]);
 console.timeEnd("functional-timer");
